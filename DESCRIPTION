@@ -1,0 +1,27 @@
+Package: anisoFun
+Version: 1.0
+Date: 2022-08-3
+Title: Isotropic feasibility domains
+Description: Tools to estimate extintion probabilities and anisotropic index.
+Author: Alfonso Allen-Perkins <alfonso.allen.perkins@gmail.com>
+Maintainer: Alfonso Allen-Perkins <alfonso.allen.perkins@gmail.com>
+Depends:
+    foreach,
+    doParallel
+Imports:
+    tibble,
+    dplyr,
+    magrittr,
+    stats,
+    mvtnorm,
+    boot,
+    pracma,
+    matlib,
+    zipfR
+Suggests:
+    testthat,
+    knitr, 
+    rmarkdown
+VignetteBuilder: knitr
+License: MIT + file LICENSE
+RoxygenNote: 7.1.2
