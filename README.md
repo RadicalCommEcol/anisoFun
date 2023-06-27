@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8086505.svg)](https://doi.org/10.5281/zenodo.8086505)
+
 # anisoFun 1.0.0
 
 anisoFun provides a complete toolbox for calculating i) the maximum isotropic cap, ii) average exclusion probabilities, iii) anisotropic index, and iv) values of (small and capital) Omega for a given multispecies community, whose population dynamics can be approximated by a Lotka-Volterra (LV) model. The functions report 95% confidence intervals for those features that are estimated via quasi-Monte Carlo methods.
