@@ -11,8 +11,8 @@
 #'     of the feasibility domain and the unit ball. Specifically, each row
 #'     shows:
 #'   \itemize{
-#'    \item The abundance of species i at the given vertex (N_i).
-#'    \item The intrinsic growth rate of species i at the given vertex (r_i).
+#'    \item The density of species i at the given vertex (N_i) (trivially, it is 1).
+#'    \item The intrinsic growth rate of species i at the given vertex (r_i) normalised to the unit ball.
 #'    \item The vertex ID.
 #'  }
 #'
@@ -47,10 +47,12 @@ vertices_unit_ball <- function(A_int){
     r_values$vertex_ID <- NA
     
     for(i in 1:dimensions){
+
+      #Turning each column of A into a unit vector
+      sup_A_col_i <- -A_int[,i]
+      sup_A_col_i <- sup_A_col_i / sqrt(sum(sup_A_col_i^2))
       
-      sup_A_col_i <- A_int[,i]
-      
-      Nv_i_aux <- sqrt(1/sum( sup_A_col_i* sup_A_col_i))
+      Nv_i_aux <- 1
       
       # We add a zero in x_aux at position i
       if(i==1){
@@ -62,8 +64,7 @@ vertices_unit_ball <- function(A_int){
       }
       
       Nv_i_mat <- matrix(Nv_i,nrow = dimensions, ncol = 1)
-      rv_i_mat <- (-1)*A_int %*%  Nv_i_mat
-      rv_i <- as.numeric(rv_i_mat)
+      rv_i <- as.numeric(sup_A_col_i)
       
       r_values[i,1:dimensions] <- Nv_i
       r_values[i,(dimensions+1):(2*dimensions)] <- rv_i
