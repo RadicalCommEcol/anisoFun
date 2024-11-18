@@ -9,7 +9,8 @@
 #'
 #' @examples
 #' A_int <- -1*diag(c(3,5,7))
-#' obtain_densities(A_int,center)
+#' center <- matrix(c(1,1,1)/sqrt(3),ncol = 1)
+#' obtain_densities(center, A_int) #output should be the (1/3,1/3,1/3)
 #'
 #' @export
 
@@ -57,11 +58,13 @@ for(i in 1:dimensions){
   #Turning each column of A into a unit vector
   sup_A_col_i <- A_int[,i]
   sup_A_col_i <- sup_A_col_i / sqrt(sum(sup_A_col_i*sup_A_col_i))
-  
   N_star[i] <- - center[i] / sup_A_col_i[i]
   
 
   }
+
+  #project N_star to the simplex
+  N_star <- N_star / sum(N_star)
 
   return(N_star)
 
