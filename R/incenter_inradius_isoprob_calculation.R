@@ -13,10 +13,10 @@
 #' @return A list with 3 elements:
 #' \itemize{
 #'    \item The first element is a vector that contains the intrinsic growth 
-#'    rates of the feasibility domain's incenter, I.
+#'    rates of the feasibility domain's incenter, I, normalized to the unit ball.
 #'    \item The second element is a number that represents the great circle 
-#'    distance from I to the border of the maximum  isotropic cap, theta.
-#'    \item The third element is a number that shows area of the maximum 
+#'    distance (arc length) from I to the border of the maximum  isotropic cap, theta.
+#'    \item The third element is a number that shows the area of the maximum 
 #'    isotropic cap, Xi.
 #'  }
 #'
