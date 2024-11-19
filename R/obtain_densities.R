@@ -5,6 +5,7 @@
 #' @param r_norm2 an S vector that contains an intrinsic growth rate vector with sqrt(sum(r_norm2*r_norm2)) = 1
 #' @param A_int SxS interaction matrix, where S is the number of species.
 #'
+#' @import quadprog
 #' @return A matrix with 1 row and S columns. Each column contains the density for each species
 #'
 #' @examples
@@ -14,7 +15,6 @@
 #'
 #' @export
 
-library(quadprog)
 
 obtain_densities <- function(r_norm2, A_int){
   
