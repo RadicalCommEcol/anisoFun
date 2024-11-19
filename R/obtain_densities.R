@@ -62,6 +62,6 @@ obtain_densities <- function(r_norm2, A_int){
     if(test_chol_decomp != T){
       cat("use_chol_decomp should be logical, that is, TRUE or FALSE.","\n")
     }
-    
+  }   
 }
     
