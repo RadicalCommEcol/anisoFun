@@ -40,8 +40,6 @@ obtain_densities <- function(r_norm2, A_int){
       
     }
 
-  }
-      
   # Using quadratic programming
   G <- t(rbind(-A_int,diag(length(r_norm2))))
   h <- matrix(c(r_norm2,rep(0,length(r_norm2))))
@@ -53,5 +51,17 @@ obtain_densities <- function(r_norm2, A_int){
 
   return(N_star)
 
+  }else{
+    
+    if(test_result_A_int[[1]] != T){
+      cat(test_result_A_int[[2]],"\n")
+    }
+    if(test_replicates != T){
+      cat("replicates should be a whole number.","\n")
+    }
+    if(test_chol_decomp != T){
+      cat("use_chol_decomp should be logical, that is, TRUE or FALSE.","\n")
+    }
+    
 }
     
