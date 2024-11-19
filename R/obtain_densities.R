@@ -56,11 +56,8 @@ obtain_densities <- function(r_norm2, A_int){
     if(test_result_A_int[[1]] != T){
       cat(test_result_A_int[[2]],"\n")
     }
-    if(test_replicates != T){
-      cat("replicates should be a whole number.","\n")
-    }
-    if(test_chol_decomp != T){
-      cat("use_chol_decomp should be logical, that is, TRUE or FALSE.","\n")
+    if(test_result_r_norm2[[1]] != T){
+      cat(test_result_r_norm2[[2]],"\n")
     }
   }   
 }
