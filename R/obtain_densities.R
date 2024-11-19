@@ -1,6 +1,6 @@
-#' Density of the species at a given intrinsic growth rates vector inside the feasibility domain
+#' Density of the species at a given intrinsic growth rates vector inside or outside the feasibility domain
 #'
-#' Given a vector r_norm2 in the feasibility domain (so norm2(r_norm2) = 1), computes the densities of the species at equilibrium
+#' Given a vector r_norm2 (so norm2(r_norm2) = 1), computes the densities of the species at equilibrium
 #'
 #' @param r_norm2 an S vector that contains an intrinsic growth rate vector with sqrt(sum(r_norm2*r_norm2)) = 1
 #' @param A_int SxS interaction matrix, where S is the number of species.
@@ -40,14 +40,6 @@ obtain_densities <- function(r_norm2, A_int){
       
     }
 
-  } else {
-    
-    if(test_result_r_norm2[[2]] == "The vector that contains the initial growth rates should be in the feasibility domain.")){
-      error_messages <- paste0(test_result_A_int[[2]],"\n",
-                               test_result_r_norm2[[2]],"\n")
-      
-    }
-    cat(error_messages)
   }
       
   # Using quadratic programming
