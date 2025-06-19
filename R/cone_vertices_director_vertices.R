@@ -1,8 +1,8 @@
 #' Vertices of the feasibility domain
 #'
 #' This function computes the vertices of the simplicial cone of the 
-#' feasibility domain, when it intersects the unit ball, as well as the normal 
-#' vector of the great circle that contains all the S-1 remaining vertices and 
+#' feasibility domain, when it intersects the unit ball, as well as a normal 
+#' vector to the hyperplane that contains all the S-1 remaining vertices and 
 #' the origin of the unit ball (i.e., a point where all the intrinsic growth 
 #' rates are equal to zero).
 #'
@@ -17,10 +17,10 @@
 #'     of the feasibility domain and the unit ball. Specifically, each row
 #'     shows:
 #'    \itemize{
-#'    \item The intrinsic growth rate of species i at the given vertex (r_i).
+#'    \item The intrinsic growth rate of species i at the given vertex (r_i) normalized to the unit ball.
 #'    \item The vertex ID.
 #'    \item The vertex name.
-#'    \item the normal vector of the great circle that contains all the S-1 
+#'    \item the normal vector to the hyperplane that contains all the S-1 
 #'     remaining vertices and the origin of the unit ball.
 #'  }
 #'
